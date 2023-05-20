@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {useEffect, useRef, useState} from "react";
 
 
 const SkillBlock = (props) => {
@@ -138,7 +137,7 @@ const SkillBlock = (props) => {
                         <ProgressBar progress={block.value}/>
                     </ProgressBarContainer>
                 </Skill>
-            )}
+                )}
             </SkillsContainer>
         </Container>
     )

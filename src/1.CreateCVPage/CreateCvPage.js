@@ -80,6 +80,16 @@ const availableHtmlBlockModels = {
             subtype: "minimal",
             htmlBlock: (infos) => (<MinimalBlocks code={5} infos={infos}/>),
             description: "Minimal block - Tipo SKILL, ottimizzato per blocco (66*25)"
+        },{
+            title: "Minimal block - SKILL (66*25|66*50|66*75|50*25|50*50|50*75|33*25|33*50|33*75)",
+            subtype: "minimal",
+            htmlBlock: (infos) => (<MinimalBlocks code={6} infos={infos}/>),
+            description: "Minimal block - Tipo SKILL, ottimizzato per blocco (66*25)"
+        },{
+            title: "[0007]-Minimal block - SKILL (66*25|66*50|66*75|50*25|50*50|50*75|33*25|33*50|33*75)",
+            subtype: "minimal",
+            htmlBlock: (infos) => (<MinimalBlocks code={7} infos={infos}/>),
+            description: "Minimal block - Tipo SKILL, ottimizzato per blocco (66*25)"
         }
     ],
     [SkillType.PORTFOLIO]: []
@@ -93,7 +103,7 @@ class CreateCvPage extends Component {
             mode: "division",
             placedBlocks: [
                 {
-                    blockID: 0,
+                    placedBlockID: 0,
                     blockPositionID: 2,
                     blockHtml: <MinimalBlocks code={1} infos={{
                         title: "Diploma di maturità scientifica",
@@ -114,31 +124,51 @@ class CreateCvPage extends Component {
                     blockID: 0,
                     type: SkillType.MAIN,
                     multiBlock: false,
-                    skillsID: [0]
+                    skillsID: [0],
+                    blockTitle: "Main BLock",
+                    blockDescription: "Main Block Description",
+                    displayTitle: "EDOARDO GUANI",
+                    displaySubtitle: "ENGINEER",
                 },
                 {
                     blockID: 1,
                     type: SkillType.SKILL,
                     multiBlock: true,
-                    skillsID: [1, 3]
+                    skillsID: [1, 3],
+                    blockTitle: "Main BLock",
+                    blockDescription: "Main Block Description",
+                    displayTitle: "EDOARDO GUANI",
+                    displaySubtitle: "ENGINEER",
                 },
                 {
                     blockID: 2,
                     type: SkillType.PORTFOLIO,
                     multiBlock: true,
-                    skillsID: [2, 4]
+                    skillsID: [2, 4],
+                    blockTitle: "Main BLock",
+                    blockDescription: "Main Block Description",
+                    displayTitle: "EDOARDO GUANI",
+                    displaySubtitle: "ENGINEER",
                 },
                 {
                     blockID: 3,
                     type: SkillType.SKILL,
                     multiBlock: false,
-                    skillsID: [1]
+                    skillsID: [1],
+                    blockTitle: "Main BLock",
+                    blockDescription: "Main Block Description",
+                    displayTitle: "EDOARDO GUANI",
+                    displaySubtitle: "ENGINEER",
                 },
                 {
                     blockID: 4,
                     type: SkillType.PORTFOLIO,
                     multiBlock: false,
-                    skillsID: [2]
+                    skillsID: [2],
+                    blockTitle: "Main BLock",
+                    blockDescription: "Main Block Description",
+                    displayTitle: "EDOARDO GUANI",
+                    displaySubtitle: "ENGINEER",
                 }
             ],
             skills: [

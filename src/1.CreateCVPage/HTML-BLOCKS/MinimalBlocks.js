@@ -3,6 +3,8 @@ import {useEffect, useLayoutEffect, useRef, useState} from "react";
 import SkillBlock from "./Minimal Blocks/Code0001";
 import SkillBlock2 from "./Minimal Blocks/Code0002";
 import Code0003 from "./Minimal Blocks/Code0003";
+import Code0004 from "./Minimal Blocks/Code0004";
+import Code0007 from "./Minimal Blocks/Code0007";
 
 
 
@@ -335,6 +337,12 @@ const MinimalBlocks = (props) => {
     }
     if (props.code === 5){
         return <Code0003 infos={props.infos}/>
+    }
+    if (props.code === 6){
+        return <Code0004 infos={props.infos}/>
+    }
+    if (props.code === 7){
+        return <Code0007 infos={props.infos}/>
     }
 }
 
