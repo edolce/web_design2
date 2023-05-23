@@ -5,7 +5,9 @@ import {useState} from "react";
 const MainContainer = styled.div`
   position: absolute;
   z-index: 3;
-  width: 100%;
+  width: 40%;
+  right: 0;
+  transform: translateX(100%);
   height: 100%;
   background-color: #7700a6;
 `;
@@ -32,7 +34,7 @@ const SkillToAdd = styled.div`
   height: 10%;
   border: none;
   color: white;
-  font-size: 16px;
+  font-size: 1vh;
   margin: 5px 0;
   cursor: pointer;
   display: grid;
@@ -76,24 +78,28 @@ const ModelContainer = styled.div`
 
 const ModelSelection = (props) => {
     const Title = styled.div`
-      font-size: 24px;
+      font-size: 1.2vh;
       font-weight: bold;
     `;
 
     const Description = styled.div`
-      font-size: 16px;
+      font-size: 1.2vh;
     `;
 
 
     function handleClick(model) {
         props.cancel()
-        console.log("model",model)
+        console.log("model", model)
+        props.addPlacedBlock(props.blockId, model.htmlBlock(props.infos))
+    }
+
+    function handleHover(model) {
         props.addPlacedBlock(props.blockId, model.htmlBlock(props.infos))
     }
 
     return <ModelSelectionContainer>
         {props.availableModels[props.infos.type].map((model) => {
-            return <ModelContainer onClick={() => handleClick(model)}>
+            return <ModelContainer onClick={() => handleClick(model)} onMouseEnter={() => handleHover(model)}>
                 <Title>{model.title}</Title>
                 <Description>{model.description}</Description>
             </ModelContainer>
@@ -109,8 +115,11 @@ const ChooseBlockToAdd = (props) => {
             <ModelSelection
                 availableModels={props.availableModels}
                 infos={modelSelection}
-                cancel={() => {setModelSelection(undefined);props.cancel()}}
-                addPlacedBlock={(a,b)=>props.addPlacedBlock(a,b)}
+                cancel={() => {
+                    setModelSelection(undefined);
+                    props.cancel()
+                }}
+                addPlacedBlock={(a, b) => props.addPlacedBlock(a, b)}
                 blockId={props.blockId}
             />}
         <CloseButton
